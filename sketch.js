@@ -11,13 +11,13 @@ let targetSpeed = 1;
 let score = 0;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(window.innerWidth, window.innerHeight);
   noStroke();
-  
-  drawBackground('🧙‍♂️');
-}
+  }
 
 function draw() {
+    drawBackground('🧙‍♂️');
+
   if(targetX >= playerX - playerRadius && targetX <= playerX + playerRadius && targetY >= playerY - playerRadius && targetY <= playerY + playerRadius)   {
     score = score + 1;
     targetSpeed = score;
@@ -55,11 +55,11 @@ function mouseClicked() {
 }
 
 function drawBackground(backgroundText) {
-  background('white');
+  background('green');
   
-  for(let count = 1; count < 1000; count = count + 1) {
-    text(backgroundText, Math.random() * width, Math.random() * height);
-  }
+  // for(let count = 1; count < 1000; count = count + 1) {
+  //   text(backgroundText, Math.random() * width, Math.random() * height);
+  // }
 }
 
 function getMovementAmount() {
